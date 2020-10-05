@@ -32,9 +32,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-
-
-
+    
     Column _buildButtonColumn(Color color, IconData icon, String label) {
       return Column(
           mainAxisSize: MainAxisSize.min,
