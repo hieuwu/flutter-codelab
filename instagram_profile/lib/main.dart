@@ -67,3 +67,52 @@ Widget bioSection = Container(
     Text('Software engineer')
   ]),
 );
+
+Widget headerSection = Container(
+  padding: const EdgeInsets.only(left: 20, top : 12),
+  child: Expanded(
+    child:  Row(
+      children: [
+        Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image:
+            DecorationImage(
+              fit: BoxFit.fill,
+              image: new AssetImage('images/rose.jpg',),
+            ),
+          ),
+        ),
+        Container(
+
+          padding: const EdgeInsets.only(left: 64),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [Text('hieuvu_',
+                style: TextStyle(fontSize: 24)),
+                  Container(
+                    margin: const EdgeInsets.only(left: 24),
+                    child: Icon(Icons.settings, ),
+                  )
+                  ],
+              ),
+              Container(
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.all(Radius.circular(5))
+                  ),
+                  child: Text("Edit profile",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+            ],
+          ),
+        )
+      ],
+    ),
+  )
+);
