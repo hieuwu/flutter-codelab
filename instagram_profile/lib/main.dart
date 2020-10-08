@@ -34,7 +34,9 @@ class ProfilePage extends StatelessWidget {
           headerSection,
           bioSection,
           activitySection,
-        ]));
+        ])
+
+    );
   }
 }
 
@@ -51,18 +53,22 @@ Column _buildActivityItem(String text, String type) {
 }
 
 Widget activitySection = Container(
+    decoration: BoxDecoration(
+      border: Border.all(color: Colors.grey),
+    ),
+    padding: const EdgeInsets.only(top: 12, bottom: 12),
     child: Center(
-  child: Row(
-    children: [
-      Expanded(child: _buildActivityItem('35', 'Posts')),
-      Expanded(child: _buildActivityItem('12', 'Followers')),
-      Expanded(child: _buildActivityItem('123', 'Followings')),
-    ],
-  ),
-));
+      child: Row(
+        children: [
+          Expanded(child: _buildActivityItem('35', 'Posts')),
+          Expanded(child: _buildActivityItem('12', 'Followers')),
+          Expanded(child: _buildActivityItem('123', 'Followings')),
+        ],
+      ),
+    ));
 
 Widget bioSection = Container(
-  padding: const EdgeInsets.only(left: 24, top: 14, bottom:  14),
+  padding: const EdgeInsets.only(left: 24, top: 14, bottom: 14),
   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
     Text(
       'Vu Hoang Hieu',
@@ -73,50 +79,52 @@ Widget bioSection = Container(
 );
 
 Widget headerSection = Container(
-  padding: const EdgeInsets.only(left: 20, top : 12),
-  child: Expanded(
-    child:  Row(
-      children: [
-        Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image:
-            DecorationImage(
-              fit: BoxFit.fill,
-              image: new AssetImage('images/rose.jpg',),
+    padding: const EdgeInsets.only(left: 20, top: 12),
+    child:
+      Row(
+        children: [
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: new AssetImage(
+                  'images/rose.jpg',
+                ),
+              ),
             ),
           ),
-        ),
-        Container(
-
-          padding: const EdgeInsets.only(left: 64),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [Text('hieuvu_',
-                style: TextStyle(fontSize: 24)),
-                  Container(
-                    margin: const EdgeInsets.only(left: 24),
-                    child: Icon(Icons.settings, ),
-                  )
+          Container(
+            padding: const EdgeInsets.only(left: 64),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text('hieuvu_', style: TextStyle(fontSize: 24)),
+                    Container(
+                      margin: const EdgeInsets.only(left: 24),
+                      child: Icon(
+                        Icons.settings,
+                      ),
+                    )
                   ],
-              ),
-              Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.all(Radius.circular(5))
-                  ),
-                  child: Text("Edit profile",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  )),
-            ],
-          ),
-        )
-      ],
-    ),
-  )
+                ),
+                Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: Text(
+                      "Edit profile",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
+              ],
+            ),
+          )
+        ],
+      ),
+
 );
