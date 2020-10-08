@@ -29,26 +29,15 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Profile"),
       ),
-      body: Center(
-        child: ActivityInfo(),
-      ),
+      body: Row(
+        children: [
+          activitySection,
+          bioSection],
+      )
     );
   }
 }
 
-class ActivityInfo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return
-      Row(
-        children: [
-        Expanded(child:  _buildActivityItem('23', 'Posts')),
-        Expanded(child:  _buildActivityItem('12', 'Followers')),
-        Expanded(child:  _buildActivityItem('123', 'Followings')),
-      ],
-      );
-  }
-}
 
 Column _buildActivityItem(String text, String type) {
   return Column(children: [
