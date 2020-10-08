@@ -26,46 +26,44 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
-      ),
-      body: Row(
-        children: [
-          activitySection,
-          bioSection],
-      )
-    );
+        appBar: AppBar(
+          title: Text("Profile"),
+        ),
+        body: ListView(children: [bioSection, activitySection]));
   }
 }
 
-
 Column _buildActivityItem(String text, String type) {
-  return Column(children: [
-    Text(text,
-      style: TextStyle(fontWeight: FontWeight.bold),),
-    Text(type)
-  ],);
+  return Column(
+    children: [
+      Text(
+        text,
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      Text(type)
+    ],
+  );
 }
 
 Widget activitySection = Container(
-  padding: const EdgeInsets.all(12),
-
-  child: Row(
-    children: [
-      Expanded(child: _buildActivityItem('35', 'Posts')),
-      Expanded(child: _buildActivityItem('12', 'Followers')),
-      Expanded(child: _buildActivityItem('123', 'Followings')),
-    ],
-  ),
+  child: Center(
+    child: Row(
+      children: [
+        Expanded(child: _buildActivityItem('35', 'Posts')),
+        Expanded(child: _buildActivityItem('12', 'Followers')),
+        Expanded(child: _buildActivityItem('123', 'Followings')),
+      ],
+    ),
+  )
 );
 
-Widget bioSection =  Container(
-
-    child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [Text('Vu Hoang Hieu',
-        style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        Text('Software engineer')]
-)
+Widget bioSection = Container(
+  padding: const EdgeInsets.all(14),
+  child:  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    Text(
+      'Vu Hoang Hieu',
+      style: TextStyle(fontWeight: FontWeight.bold),
+    ),
+    Text('Software engineer')
+  ]),
 );
