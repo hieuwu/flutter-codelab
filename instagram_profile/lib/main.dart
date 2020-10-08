@@ -46,3 +46,26 @@ Column _buildActivityItem(String text, String type) {
     Text(type)
   ],);
 }
+
+Widget activitySection = Container(
+  padding: const EdgeInsets.all(12),
+
+  child: Row(
+    children: [
+      Expanded(child: _buildActivityItem('35', 'Posts')),
+      Expanded(child: _buildActivityItem('12', 'Followers')),
+      Expanded(child: _buildActivityItem('123', 'Followings')),
+    ],
+  ),
+);
+
+Widget bioSection =  Container(
+
+    child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [Text('Vu Hoang Hieu',
+        style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        Text('Software engineer')]
+)
+);
