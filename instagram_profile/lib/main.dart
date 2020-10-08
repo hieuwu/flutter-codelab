@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +30,11 @@ class ProfilePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Profile"),
         ),
-        body: ListView(children: [bioSection, activitySection]));
+        body: ListView(children: [
+          headerSection,
+          bioSection,
+          activitySection,
+        ]));
   }
 }
 
@@ -46,20 +51,19 @@ Column _buildActivityItem(String text, String type) {
 }
 
 Widget activitySection = Container(
-  child: Center(
-    child: Row(
-      children: [
-        Expanded(child: _buildActivityItem('35', 'Posts')),
-        Expanded(child: _buildActivityItem('12', 'Followers')),
-        Expanded(child: _buildActivityItem('123', 'Followings')),
-      ],
-    ),
-  )
-);
+    child: Center(
+  child: Row(
+    children: [
+      Expanded(child: _buildActivityItem('35', 'Posts')),
+      Expanded(child: _buildActivityItem('12', 'Followers')),
+      Expanded(child: _buildActivityItem('123', 'Followings')),
+    ],
+  ),
+));
 
 Widget bioSection = Container(
-  padding: const EdgeInsets.all(14),
-  child:  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+  padding: const EdgeInsets.only(left: 24, top: 14, bottom:  14),
+  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
     Text(
       'Vu Hoang Hieu',
       style: TextStyle(fontWeight: FontWeight.bold),
