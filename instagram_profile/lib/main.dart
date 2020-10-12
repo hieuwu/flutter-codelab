@@ -44,13 +44,19 @@ class ProfilePage extends StatelessWidget {
                   bottom: TabBar(
                     tabs: [
                       Tab(
-                        icon: Icon(Icons.directions_bike),
+                        icon: Icon(Icons.grid_view),
                       ),
                       Tab(
                         icon: Icon(
-                          Icons.directions_car,
+                          Icons.live_tv,
                         ),
                       ),
+                      Tab(
+                        icon: Icon(Icons.tag),
+                      ),
+                      Tab(
+                        icon: Icon(Icons.person)
+                      )
                     ],
                   ),
                 ),
