@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';            // NEW
+import 'package:intl/intl.dart';
 import 'model/app_state_model.dart';
-import 'styles.dart';                       // NEW
-import 'model/product.dart';              // NEW
+import 'styles.dart';
+import 'model/product.dart';
 
-const double _kDateTimePickerHeight = 216;  // NEW
+const double _kDateTimePickerHeight = 216;
 
 
 class ShoppingCartTab extends StatefulWidget {
@@ -16,16 +16,14 @@ class ShoppingCartTab extends StatefulWidget {
 }
 
 class _ShoppingCartTabState extends State<ShoppingCartTab> {
-  String name;      // ADD FROM HERE
+  String name;
   String email;
   String location;
   String pin;
   DateTime dateTime = DateTime.now();
-  final _currencyFormat = NumberFormat.currency(symbol: '\$'); // NEW
+  final _currencyFormat = NumberFormat.currency(symbol: '\$');
 
-
-
-  Widget _buildDateAndTimePicker(BuildContext context) { // NEW FROM HERE
+  Widget _buildDateAndTimePicker(BuildContext context) {
     return Column(
       children: <Widget>[
         Row(
@@ -168,7 +166,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
               child: _buildDateAndTimePicker(context),
             );
-              default:                      // NEW FROM HERE
+              default:
                 if (model.productsInCart.length > productIndex) {
                   return ShoppingCartItem(
                     index: index,
@@ -214,7 +212,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
         return null;
       },
     );
-  }                  // TO HERE
+  }
 
   @override
   Widget build(BuildContext context) {

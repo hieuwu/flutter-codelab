@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'product_list_tab.dart';   // NEW
-import 'search_tab.dart';         // NEW
-import 'shopping_cart_tab.dart';  // NEW
+import 'product_list_tab.dart';
+import 'search_tab.dart';
+import 'shopping_cart_tab.dart';
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -44,7 +44,7 @@ class _SearchTabState extends State<SearchTab> {
         focusNode: _focusNode,
       ),
     );
-  }                                     // TO HERE
+  }
 
 
   @override
