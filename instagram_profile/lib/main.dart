@@ -113,6 +113,22 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'New 3',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'New 4',
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
