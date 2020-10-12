@@ -14,4 +14,5 @@ I will update more detail and explanation for each small project for you guys to
 - Add shipment info
 
 
-<img src="https://i.imgur.com/hY1YcTC.mp4" alt="Cupertino Store">
+![](https://media.giphy.com/media/Mg2arVupqdRX8VfbzX/giphy.gif)
+
