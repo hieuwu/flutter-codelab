@@ -66,11 +66,41 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     // first tab bar view widget
                     Container(
-                      color: Colors.red,
+                      color: Colors.white,
                       child: Center(
-                        child: Text(
-                          'Bike',
-                        ),
+                        child: GridView.count(
+                          primary: false,
+                          padding: const EdgeInsets.all(20),
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          crossAxisCount: 2,
+                          children: <Widget>[
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-1.jpg',fit: BoxFit.cover,),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-2.jpg',fit: BoxFit.cover,),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-3.jpg',fit: BoxFit.cover,),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-4.jpg',fit: BoxFit.cover,),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-5.jpg',fit: BoxFit.cover,),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              child: Image.asset('images/social-6.jpg',fit: BoxFit.cover,),
+                            ),
+                          ],
+                        )
                       ),
                     ),
 
