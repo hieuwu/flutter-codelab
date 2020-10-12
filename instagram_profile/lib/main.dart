@@ -106,26 +106,23 @@ class ProfilePage extends StatelessWidget {
 
                     // second tab bar viiew widget
                     Container(
-                      color: Colors.pink,
                       child: Center(
                         child: Text(
-                          'Car',
+                          'Live',
                         ),
                       ),
                     ),
                     Container(
-                      color: Colors.pink,
                       child: Center(
                         child: Text(
-                          'New 3',
+                          'Tag',
                         ),
                       ),
                     ),
                     Container(
-                      color: Colors.pink,
                       child: Center(
                         child: Text(
-                          'New 4',
+                          'Pictures have you',
                         ),
                       ),
                     ),
@@ -222,3 +219,4 @@ Widget headerSection = Container(
     ],
   ),
 );
+
