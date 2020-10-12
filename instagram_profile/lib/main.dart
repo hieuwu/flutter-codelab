@@ -26,17 +26,59 @@ class MyApp extends StatelessWidget {
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Profile"),
-        ),
-        body: ListView(children: [
-          headerSection,
-          bioSection,
-          activitySection,
-        ])
+    return DefaultTabController(
+        length: 2,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text("Profile"),
+            ),
+            body: Column(children: [
+              headerSection,
+              bioSection,
+              activitySection,
+              SizedBox(
+                height: 50,
+                child: AppBar(
+                  bottom: TabBar(
+                    tabs: [
+                      Tab(
+                        icon: Icon(Icons.directions_bike),
+                      ),
+                      Tab(
+                        icon: Icon(
+                          Icons.directions_car,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    // first tab bar view widget
+                    Container(
+                      color: Colors.red,
+                      child: Center(
+                        child: Text(
+                          'Bike',
+                        ),
+                      ),
+                    ),
 
-    );
+                    // second tab bar viiew widget
+                    Container(
+                      color: Colors.pink,
+                      child: Center(
+                        child: Text(
+                          'Car',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ])));
   }
 }
 
@@ -79,52 +121,50 @@ Widget bioSection = Container(
 );
 
 Widget headerSection = Container(
-    padding: const EdgeInsets.only(left: 20, top: 12),
-    child:
-      Row(
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: new AssetImage(
-                  'images/rose.jpg',
-                ),
-              ),
+  padding: const EdgeInsets.only(left: 20, top: 12),
+  child: Row(
+    children: [
+      Container(
+        width: 100,
+        height: 100,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: new AssetImage(
+              'images/rose.jpg',
             ),
           ),
-          Container(
-            padding: const EdgeInsets.only(left: 64),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        ),
+      ),
+      Container(
+        padding: const EdgeInsets.only(left: 64),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               children: [
-                Row(
-                  children: [
-                    Text('hieuvu_', style: TextStyle(fontSize: 24)),
-                    Container(
-                      margin: const EdgeInsets.only(left: 24),
-                      child: Icon(
-                        Icons.settings,
-                      ),
-                    )
-                  ],
-                ),
+                Text('hieuvu_', style: TextStyle(fontSize: 24)),
                 Container(
-                    padding: const EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: Text(
-                      "Edit profile",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                  margin: const EdgeInsets.only(left: 24),
+                  child: Icon(
+                    Icons.settings,
+                  ),
+                )
               ],
             ),
-          )
-        ],
-      ),
-
+            Container(
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
+                child: Text(
+                  "Edit profile",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )),
+          ],
+        ),
+      )
+    ],
+  ),
 );
