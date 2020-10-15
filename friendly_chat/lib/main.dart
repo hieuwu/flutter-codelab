@@ -160,30 +160,41 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         title: Text("Friendly Chat"),
+        elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
       ),
-      body: Column(
-        // MODIFIED
-        children: [
-          // NEW
-          Flexible(
-            // NEW
-            child: ListView.builder(
+      body: Container(
+          child: Column(
+            // MODIFIED
+            children: [
               // NEW
-              padding: EdgeInsets.all(8.0), // NEW
-              reverse: true, // NEW
-              itemBuilder: (_, int index) => _messages[index], // NEW
-              itemCount: _messages.length, // NEW
-            ), // NEW
-          ), // NEW
-          Divider(height: 1.0), // NEW
-          Container(
-            // NEW
-            decoration:
-                BoxDecoration(color: Theme.of(context).cardColor), // NEW
-            child: _buildTextComposer(), //MODIFIED
-          ), // NEW
-        ], // NEW
-      ),
+              Flexible(
+                // NEW
+                child: ListView.builder(
+                  // NEW
+                  padding: EdgeInsets.all(8.0), // NEW
+                  reverse: true, // NEW
+                  itemBuilder: (_, int index) => _messages[index], // NEW
+                  itemCount: _messages.length, // NEW
+                ), // NEW
+              ), // NEW
+              Divider(height: 1.0), // NEW
+              Container(
+                // NEW
+                decoration:
+                    BoxDecoration(color: Theme.of(context).cardColor), // NEW
+                child: _buildTextComposer(), //MODIFIED
+              ), // NEW
+            ], // NEW
+          ),
+          decoration: Theme.of(context).platform == TargetPlatform.iOS // NEW
+              ? BoxDecoration(
+                  // NEW
+                  border: Border(
+                    // NEW
+                    top: BorderSide(color: Colors.grey[200]), // NEW
+                  ), // NEW
+                ) // NEW
+              : null),
     );
   }
 
