@@ -86,13 +86,18 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   final _textController = TextEditingController();
   final List<ChatMessage> _messages = [];
   final FocusNode _focusNode = FocusNode();
+  bool _isComposing = false;
   void _handleSubmitted(String text) {
     _textController.clear();
+    setState(() {
+      // NEW
+      _isComposing = false; // NEW
+    });
     ChatMessage message = ChatMessage(
       text: text,
       animationController: AnimationController(
         // NEW
-        duration: const Duration(milliseconds: 700), // NEW
+        duration: const Duration(milliseconds: 450), // NEW
         vsync: this, // NEW
       ),
     );
