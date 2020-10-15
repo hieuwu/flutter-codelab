@@ -115,7 +115,8 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
               child: TextField(
                 controller: _textController,
                 onSubmitted: _handleSubmitted,
-                decoration: InputDecoration.collapsed(hintText: 'Send a message'),
+                decoration:
+                    InputDecoration.collapsed(hintText: 'Send a message'),
                 focusNode: _focusNode,
               ),
             ),
@@ -138,24 +139,37 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
       appBar: AppBar(
         title: Text("Friendly Chat"),
       ),
-      body: Column(                                        // MODIFIED
-        children: [                                        // NEW
-          Flexible(                                        // NEW
-            child: ListView.builder(                       // NEW
-              padding: EdgeInsets.all(8.0),                // NEW
-              reverse: true,                               // NEW
+      body: Column(
+        // MODIFIED
+        children: [
+          // NEW
+          Flexible(
+            // NEW
+            child: ListView.builder(
+              // NEW
+              padding: EdgeInsets.all(8.0), // NEW
+              reverse: true, // NEW
               itemBuilder: (_, int index) => _messages[index], // NEW
-              itemCount: _messages.length,                 // NEW
-            ),                                             // NEW
-          ),                                               // NEW
-          Divider(height: 1.0),                            // NEW
-          Container(                                       // NEW
-            decoration: BoxDecoration(
-                color: Theme.of(context).cardColor),         // NEW
-            child: _buildTextComposer(),                   //MODIFIED
-          ),                                               // NEW
-        ],                                                 // NEW
+              itemCount: _messages.length, // NEW
+            ), // NEW
+          ), // NEW
+          Divider(height: 1.0), // NEW
+          Container(
+            // NEW
+            decoration:
+                BoxDecoration(color: Theme.of(context).cardColor), // NEW
+            child: _buildTextComposer(), //MODIFIED
+          ), // NEW
+        ], // NEW
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    for (ChatMessage message in _messages) {
+      message.animationController.dispose();
+    }
+    super.dispose();
   }
 }
