@@ -85,9 +85,15 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final _textController = TextEditingController();
-
+  final List<ChatMessage> _messages = [];
+  final FocusNode _focusNode = FocusNode();
   void _handleSubmitted(String text) {
     _textController.clear();
+    ChatMessage message = ChatMessage(text: text,);
+    setState(() {
+      _messages.insert(0, message);
+    });
+    _focusNode.requestFocus();
   }
 
   Widget _buildTextComposer() {
